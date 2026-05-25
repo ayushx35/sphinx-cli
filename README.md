@@ -1,4 +1,4 @@
-# Sphinx-CLI 🤖💬
+# Sphinx-CLI 
 
 Sphinx-CLI is a lightweight, high-performance terminal chat interface for interacting with OpenAI's models in real-time. Built using **Rust**, **Ratatui**, and **Tokio**, it demonstrates how to handle asynchronous, non-blocking Server-Sent Events (SSE) streaming inside a terminal user interface (TUI) rendering loop.
 
