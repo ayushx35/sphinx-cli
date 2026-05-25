@@ -6,7 +6,10 @@ Sphinx-CLI is a lightweight, high-performance terminal chat interface for intera
 
 ## 📺 Demo
 
-[Insert your product demo video/GIF here]
+
+
+https://github.com/user-attachments/assets/7093df90-7241-4683-935c-8b5746adcbe4
+
 
 ---
 
