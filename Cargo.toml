@@ -1,8 +1,13 @@
 [package]
-name = "sphinx"
+name = "ratatui-chat"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
-color-eyre = "0.6.5"
-ratatui = {version="0.30.0", features=["all-widgets"]}
+ratatui = "0.27"
+crossterm = "0.27"
+tokio = { version = "1", features = ["full"] }
+reqwest = { version = "0.12", features = ["json", "stream"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+futures-util = "0.3"
