@@ -44,7 +44,7 @@ https://github.com/user-attachments/assets/7093df90-7241-4683-935c-8b5746adcbe4
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/yourusername/sphinx-cli.git](https://github.com/yourusername/sphinx-cli.git)
-   cd sphinx-cl
+   cd sphinx-cli
    ```
 
 2.   **Set up your Environment Variable:**
