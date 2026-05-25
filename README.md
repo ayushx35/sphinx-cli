@@ -65,9 +65,9 @@ cargo run --release
 | `Ctrl + C` | Safely exit the application |
 
 > ℹ️ **Note:** Input editing and backspaces are disabled while the AI is actively streaming a response to prevent concurrent mutations.
-4. **Architecture Breakdown**
+## Architecture Breakdown
 The program operates on a split-worker loop:
 The Main Loop: Draws the frame at a smooth interval (≈16ms intervals / 60Hz), polls keyboard inputs using crossterm, and drains the ai_rx MPSC channel on every tick using try_recv().
 The Worker Task: On pressing Enter, tokio::spawn ships the text history off into a background network routine. It handles the reqwest pipeline and continuously fires tokens back to the main thread until it hits [DONE] or encounters an error.
-5. **License**
+## License
 This project is licensed under the MIT License. See the LICENSE file for details.
