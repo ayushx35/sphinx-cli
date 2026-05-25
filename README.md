@@ -41,27 +41,33 @@ Sphinx-CLI is a lightweight, high-performance terminal chat interface for intera
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/yourusername/sphinx-cli.git](https://github.com/yourusername/sphinx-cli.git)
-   cd sphinx-cli
+   cd sphinx-cl
+   ```
 
-   Set up your Environment Variable:
-Bash
-export OPENAI_API_KEY="sk-your-actual-api-key-here"
-Run the application:
-Bash
+2.   **Set up your Environment Variable:**
+```bash
+export OPENAI_API_KEY="sk-your-actual-api-key-here" 
+```
+3. **Run the application:**
+```bash
 cargo run --release
-🎮 Controls
-Key	Action
-Enter	Submit your prompt to the AI
-Up Arrow	Scroll up through chat history
-Down Arrow	Scroll down through chat history
-Left Arrow	Move input cursor left
-Right Arrow	Move input cursor right
-Backspace	Delete character behind the cursor
-Ctrl + C	Safely exit the application
-ℹ️ Note: Input editing and backspaces are disabled while the AI is actively streaming a response to prevent concurrent mutations.
-📐 Architecture Breakdown
+```
+## 🎮 Controls
+
+| Key | Action |
+| :--- | :--- |
+| `Enter` | Submit your prompt to the AI |
+| `Up Arrow` | Scroll *up* through chat history |
+| `Down Arrow`| Scroll *down* through chat history |
+| `Left Arrow`| Move input cursor left |
+| `Right Arrow`| Move input cursor right |
+| `Backspace` | Delete character behind the cursor |
+| `Ctrl + C` | Safely exit the application |
+
+> ℹ️ **Note:** Input editing and backspaces are disabled while the AI is actively streaming a response to prevent concurrent mutations.
+4. **Architecture Breakdown**
 The program operates on a split-worker loop:
 The Main Loop: Draws the frame at a smooth interval (≈16ms intervals / 60Hz), polls keyboard inputs using crossterm, and drains the ai_rx MPSC channel on every tick using try_recv().
 The Worker Task: On pressing Enter, tokio::spawn ships the text history off into a background network routine. It handles the reqwest pipeline and continuously fires tokens back to the main thread until it hits [DONE] or encounters an error.
-📄 License
+5. **License**
 This project is licensed under the MIT License. See the LICENSE file for details.
